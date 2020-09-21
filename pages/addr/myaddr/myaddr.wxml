@@ -1,0 +1,41 @@
+<view class="container">
+	<view class="addr-list" wx:if="{{addrList.length}}">
+		<view class="addr-detail" wx:for="{{addrList}}" wx:key="index" style="{{item.txtStyle}}"  bindtouchstart="touchS" bindtouchmove="touchM" bindtouchend="touchE"  data-index="{{index}}" bindtap="confirmAddr">
+		<!-- 左侧地址详情部分 -->
+			<view class="addr-info">
+				<view class="addr01">{{item.location}}(定位地址）</view>
+				<view class="addr02">{{item.detail}}（详细地址）</view>
+				<view class="addr-phone">
+					<text>{{item.real_name}}</text>
+					<text>{{item.phone}}</text>
+				</view>
+			</view>
+			<!-- 右侧编辑+删除部分 -->
+			<view class="addr-edit" >
+				<view class="addr-bj" catchtap="editAddr" data-id="{{item.id}}">
+					<image src="../../../images/index/icon_bianji.png" />
+					<view>编辑</view>
+				</view>
+				<view class="addr-delete" catchtap="meShowModal" >
+					<image src="../../../images/index/shanchu.png" />
+					<view>删除</view>
+				</view>
+			</view>
+		</view>
+	</view>
+	<view wx:else class="noaddr">
+		<image src="../../../images/index/lo.png" />
+		<view>当前暂无收货地址</view>
+	</view>
+	<navigator url="../newaddr/newaddr">新增收货地址</navigator>
+</view>
+<!-- showmodal组件 -->
+<!-- <show-modal id="meShowModal" wx:if="{{isShow}}" ishow="{{ishow}}"></show-modal> -->
+<!-- 弹出组件 -->
+<view class="mask" wx:if="{{isShow}}">
+	<view class="model">
+		<view>确认删除地址?</view>
+		<text catchtap="getRes" data-res="no">取消</text>
+		<text catchtap="getRes" data-res="ok">确认</text>
+	</view>
+</view>

@@ -1,0 +1,115 @@
+<!-- <wxs src='../../time.wxs' module='time'></wxs> -->
+<view class="container">
+	<view>
+		<!-- 顶部等待支付开始 -->
+		<view class="o-w top" wx:if="{{orderList._status._type==0}}">
+			<view>
+				<view style="font-size:32rpx">{{orderList._status._title}}</view>
+				<view style="font-size:28rpx">逾期未付，订单自动取消</view>
+			</view>
+			<!-- <view style="font-size:32rpx">15:36</view> -->
+			<view style="font-size:32rpx">{{orderList._status._msg}}</view>
+		</view>
+		<!-- 等待支付结束 -->
+		<!-- 已取消订单开始 -->
+		<view class="o-c top" wx:if="{{orderList._status._type==-1}}">
+			<view style="font-size:32rpx">{{orderList._status._title}}</view>
+			<view style="font-size:28rpx">{{orderList._status._msg}}</view>
+		</view>
+
+		<!-- 已取消订单结束 -->
+		<!-- 订单配送中开始 -->
+		<view class="o-p top" wx:if="{{orderList._status._type==1}}">
+			<view style="font-size:32rpx">{{orderList._status._title}}</view>
+			<view style="font-size:28rpx">等待商家送货中{{orderList._status._msg}}</view>
+		</view>
+		<!-- 订单配送中结束-->
+		<!-- 订单完成开始 -->
+		<view class="o-s top" wx:if="{{orderList._status._type==2}}">
+			<view style="font-size:32rpx">订单已完成</view>
+		</view>
+		<!-- 订单完成结束 -->
+		<!-- 订单地址开始 -->
+		<view class="addr">
+			<view>{{orderList.real_name}}</view>
+			<view>
+				<view>{{orderList.user_phone}}</view>
+				<view>{{orderList.user_location}}{{orderList.user_address}}</view>
+				<!-- <view>辽宁省沈阳市沈河区财富中心1606</view> -->
+
+			</view>
+		</view>
+		<!-- 订单地址结束 -->
+		<!-- 订单商品列表开始 -->
+		<view class="pro-list">
+			<view wx:for="{{orderList.cartInfo}}" wx:key="index">
+				<navigator url="../../prodetail/prodetail?id={{item.productInfo.id}}" class="pro-detail">
+					<image src="{{item.productInfo.image}}" class="detail-img" />
+					<view class="pro-info">
+						<view class="detail-title">
+							{{item.productInfo.store_name}}
+						</view>
+							<text class="num">x{{item.cart_num}}</text>
+						<view class="detail-price">
+							<text class="fh">￥</text>
+							<text>{{item.productInfo.price}}</text>
+							<text>包装押金：{{item.productInfo.dep_price}}</text>
+						</view>
+					</view>
+				</navigator>
+			</view>
+			<view class="wait" wx:if="{{orderList._status._type==0||orderList._status._type==-1}}">待付款:<text class="fh">￥</text><text>{{orderList.pay_price}}</text></view>
+			<view class="wait" wx:else>已付款:<text class="fh">￥</text><text>{{orderList.pay_price}}</text></view>
+		</view>
+		<!-- 订单商品列表结束 -->
+		<!-- 订单信息开始 -->
+		<view class="order">
+			<view>订单信息</view>
+			<view class="wx">
+				<view>订单编号<text>{{orderList.order_id}}</text></view>
+				<view>下单时间<text>{{orderList._add_time}}</text></view>
+				<view>支付方式<text>微信支付</text></view>
+				<view>支付时间<text>{{orderList._pay_time}}</text></view>
+			</view>
+		</view>
+		<!-- 订单信息结束 -->
+		<!-- 留言 -->
+		<view class="ly">
+			<view class="a">备注留言</view>
+			<!-- <input type="text" placeholder="请填写您的备注" value="{{}}" disabled="{{orderList._status._type==0?true:false}}" bindblur="savemark"/> -->
+			<view class="neirong">{{orderList.mark}}</view>
+		</view>
+	</view>
+	<!-- 底部按钮开始 -->
+		<!-- 等待支付 -->
+	<view class="bot" wx:if="{{orderList._status._type==0}}">
+		<view>
+			合计金额：<text class="fh">￥</text><text>{{orderList.pay_price}}</text>
+		</view>
+    <view>
+      <text class="cancel" bindtap="meShowModal">取消订单</text>
+		  <text class="pay" bindtap="payOrder" data-orderid="{{item.order_id}}">立即支付</text>
+    </view>
+	</view>
+	<view class="bot other" wx:else>
+		<view>
+			<!-- 合计金额 <text>￥</text><text>125.00</text> -->
+		</view>
+    <view bindtap="againOrder"  data-orderid="{{item.order_id}}">
+		  <text class="pay" style="display:{{orderList._status._type==1?'none':'inline-block'}}">再来一单</text>
+    </view>
+	</view>
+	<!-- 底部按钮结束 -->
+	<view>
+	</view>
+</view>
+<!-- showmodal组件 -->
+<!-- <show-modal id="meShowModal" wx:if="{{isShow}}" ishow="{{ishow}}"></show-modal> -->
+<!-- 弹出组件 -->
+<view class="mask" wx:if="{{isShow}}">
+	<view class="model">
+		<view>确认取消待支付订单?</view>
+		<text bindtap="getRes" data-res='no'>取消</text>
+		<text bindtap="getRes" data-res='ok' data-orderid="{{orderList.order_id}}">确认</text>
+	</view>
+</view>

@@ -1,0 +1,60 @@
+<view class="container">
+	<view>
+		<!-- 订单地址开始 -->
+		<view class="addr" bindtap="selectAddr">
+			<view>{{addr.real_name }}</view>
+			<view>
+				<view>{{addr.phone}}</view>
+				<view>{{addr.addr}}</view>
+			</view>
+		</view>
+		<!-- 订单地址结束 -->
+		<!-- 订单商品列表开始 -->
+		<view class="pro-list">
+			<!-- <view wx:for="{{cartInfo}}" wx:key="index"> -->
+			<navigator wx:for="{{cartInfo}}" wx:key="index" class="pro-detail" url="../../prodetail/prodetail?id={{item.productInfo.id}}">
+				<image src="{{item.productInfo.image}}" class="detail-img" />
+				<view class="pro-info">
+					<view class="detail-title">
+						{{item.productInfo.store_name}}
+					</view>
+						<text class="num">x{{item.cart_num}}</text>
+					<view class="detail-price">
+						<text class="fh">￥</text>
+						<text>{{item.productInfo.price}}</text>
+						<text>包装押金：{{item.productInfo.dep_price}}</text>
+					</view>
+				</view>
+			</navigator>
+			<!-- </view> -->
+			<view class="wait">共{{total_cart_num}}件,合计:<text class="fh">￥</text><text>{{totalMoney}}</text></view>
+		</view>
+		<!-- 订单商品列表结束 -->
+		<!-- 订单信息开始 -->
+		<view class="order">
+			<view>订单信息</view>
+			<view class="wx">
+				<image src="../../../images/index/icon_weixin.png"></image>
+				微信支付
+				<icon type="success" color="#F03C3C"></icon>
+			</view>
+		</view>
+		<!-- 订单信息结束 -->
+		<!-- 留言 -->
+		<view class="ly">
+			<view>备注留言</view>
+			<input type="text" placeholder="请填写您的备注" bindconfirm="getOrderMark" bindblur="getOrderMark" confirm-type="done"/>
+			</view>
+		<view></view>
+	</view>
+	<!-- 底部按钮开始 -->
+	<view class="bot other">
+		<view>
+			合计：<text class="fh">￥</text>{{totalMoney}}
+		</view>
+    <view bindtap="createOrder">
+		  <text class="pay" >去支付</text>
+    </view>
+	</view>
+	<!-- 底部按钮结束 -->
+</view>

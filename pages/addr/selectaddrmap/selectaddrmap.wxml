@@ -1,0 +1,100 @@
+<!--地图容器-->
+<!--longitude及latitude为设置为调转到指定地址位置，默认不显示-->
+<map id="myMap" markers="{{markers}}" style="width:100%;height:900rpx; position:fixed;top:90rpx" latitude="{{currentLat}}" longitude="{{currentLon}}" bindmarkertap="configMap" scale='16' show-location='true' enable-zoom='true' enable-scroll='true' enable-rotate='true' show-compass='true' enable-3D='true' enable-overlooking='true' bindtap="getMap" include-points:true>
+</map>
+<!-- <view bindtap="choiceCity">选择你的城市:{{address}}</view> -->
+<!-- 城市选择器开始 -->
+<view hidden="{{isCity==false}}" class="selector">
+	<view class="inner_box">
+		<view class="header_box">
+			<view class="item l" data-act="cancel" data-mold="city" bindtap="ideChoice">取消</view>
+			<view class="item c">请选择</view>
+			<view class="item r" data-act="confirm" data-mold="city" bindtap="ideChoice">确定</view>
+		</view>
+
+		<picker-view class="picker_box" indicator-class="selected" value="{{cityValue}}" bindchange="cityChange">
+			<picker-view-column>
+				<view wx:for="{{provinces}}" wx:key='index'>{{item}}</view>
+			</picker-view-column>
+			<picker-view-column>
+				<view wx:for="{{citys}}">{{item}}</view>
+			</picker-view-column>
+			<picker-view-column>
+				<view wx:for="{{countys}}" data-cityId="{{item.value}}">{{item}}</view>
+			</picker-view-column>
+		</picker-view>
+	</view>
+	<view class="layer"></view>
+</view>
+<!-- 城市选择器结束 -->
+<view class="select-addr">
+	<!--顶部搜索栏开始 -->
+	<view class=".top-search">
+		<view class="location" bindtap="choiceCity">
+			<text class="iconfont icon-dingwei"></text>
+			<text>{{city}}</text>
+			<text class="iconfont icon-xiangxia"></text>
+			<text class="iconfont icon-sousuo"></text>
+		</view>
+		<input type="text" bindinput="bindKeyInput" placeholder="街道/大厦/小区" confirm-type="search" maxlength="20" bindconfirm="clickSearch"  />
+		<text class="search" bindtap="clickSearch">搜索</text>
+	</view>
+	<!-- 顶部搜索栏结束 -->
+	<!-- 当前地址 -->
+	<view wx:if="{{!isList}}" class="map-addr">
+		<view class="now-addr addr-item">
+			<view class="now">【当前】</view>
+			<view bindtap="useThisPositon">
+				<view class="addr-info">{{detailAddress}}</view>
+				<!-- <view class="addr-user">{{userinfo.real_name}}</view> -->
+				<view class="addr-user">{{nickName}}</view>
+				<view class="addr-user">{{phone}}</view>
+			</view>
+		</view>
+		<!-- 地址结果列表 -->
+		<view class="addr-list">
+			<view class="addr-item" wx:for="{{addrList}}" wx:key='index' data-id="{{item.id}}" bindtap="confirmAddr">
+				<view class="addr-info">{{item.province}}{{item.city}}{{item.district}}{{item.detail}}{{item.location}}</view>
+				<view class="addr-user">{{item.real_name}}</view>
+				<view class="addr-user">{{item.phone}}</view>
+			</view>
+		</view>
+
+	</view>
+	<!-- 点击青岛呈现页面 -->
+	<view class="right-location" wx:else>
+		<!-- 当前地址 -->
+		<view wx:if="{{nosearch}}">
+			<view class="title">当前定位</view>
+			<view class="now-addr addr-item">
+				<!-- <text bindtap="useThisPositon">{{location}}</text> -->
+				<text catchtap="useThisPositon" class="inputaddr">{{detailAddress}}</text>
+				<text class="iconfont icon-location2" catchtap="getCurrentLocation">重新定位</text>
+			</view>
+			<!-- 我的地址列表 -->
+			<!-- <view class="title">我的地址</view> -->
+			<view class="addr-list">
+				<view class="addr-item my-addr" wx:for="{{addrList}}" wx:key='index' data-id="{{item.id}}" bindtap="confirmAddr">
+					<view class="addr-info">{{item.province}}{{item.city}}{{item.district}}{{item.detail}}{{item.location}}</view>
+					<text class="addr-user">{{item.real_name}}</text>
+					<text class="addr-user">{{item.phone}}</text>
+				</view>
+			</view>
+		</view>
+		<view wx:else>
+			<view wx:if="{{tips.length==0}}" class="addr-list">
+				<view class="nores-city">
+					<image src="../../../images/index/nores.png" />
+					<view>没有找到相关城市</view>
+				</view>
+			</view>
+			<view wx:else class="addr-list">
+				<view class="addr-item my-addr" wx:for="{{tips}}" wx:key='index' catchtap="didSelectCell" data-index="{{index}}">
+					<view class="addr-info">{{item.city + (item.district == undefined?'':item.district)}}</view>
+					<text class="addr-user">{{item.title}}</text>
+					<!-- <text class="addr-user">{{item.phone}}</text> -->
+				</view>
+			</view>
+		</view>
+	</view>
+</view>

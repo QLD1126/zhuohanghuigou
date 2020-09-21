@@ -1,0 +1,83 @@
+/* miniprogram/pages/deposit/deposit.wxss */
+.fh{font-size: 32rpx !important;}
+.container{
+  padding-top: 20rpx;
+}
+.container>view{
+  background: #fff;
+  padding-left: 48rpx;
+  margin-bottom: 0;
+}
+.container .top{
+  height: 195rpx;
+  line-height: 195rpx;
+  font-size: 32rpx;
+  font-weight: Medium;
+  margin-bottom: 20rpx !important;
+}
+.container .top:first-child>view{
+  background: #FF5400;
+  color: #fff;
+  border-radius: 10rpx;
+  position: relative;
+  top: -125rpx;
+  left: 260px;
+  width: 143rpx;
+  height: 50rpx;
+  line-height: 50rpx;
+  text-align: center;
+}
+.top navigator{
+  color: #797979;
+  font-size: 30rpx;
+  display: inline-block;
+  margin-left: 385rpx;
+}
+.top .a{
+  margin-left: -40rpx;
+}
+.top navigator>text:last-child{
+  font-size: 28rpx;
+  font-weight: bold;
+  /* margin-left: 10rpx; */
+  position: absolute;
+  right: 20rpx;
+  top: 22rpx;
+}
+/* .history */
+.history>view:first-child{
+  font-size: 32rpx;
+  margin-bottom: 2rpx;
+  line-height: 100rpx;
+}
+.history>view{
+  /* border-bottom: 2rpx solid #E8E8E8; */
+}
+.line{
+  height: 1rpx;width: 750rpx;
+  border-bottom: 2rpx solid #E8E8E8;
+  margin-left: -48rpx;
+}
+.history .navbar{
+  height: 90rpx;
+line-height: 90rpx;
+border: none;
+}
+.navbar>text:last-child{
+  margin-left: 108rpx;
+}
+.history .item{
+  font-size: 28rpx;
+  position: relative;
+  height: 128rpx;
+  line-height: 56rpx;
+  padding-top: 23rpx;  
+}
+.item>view:last-child{
+  color:#B1B1B1 ;
+}
+.item>view:last-child>text:last-child{
+  position: absolute;
+  right: 21rpx;
+  top: 78rpx;
+}

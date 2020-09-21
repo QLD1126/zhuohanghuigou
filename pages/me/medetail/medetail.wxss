@@ -1,0 +1,52 @@
+page{
+  padding-top: 20rpx;
+}
+view{
+  background: #fff;
+  height: 118rpx;
+  width: 720rpx;
+  margin-bottom: 3rpx;
+  line-height: 118rpx;
+  color: #181818;
+  font-size: 28rpx;
+  position: relative;
+  padding-left: 30rpx;
+}
+view image{
+  width: 91rpx;
+  height: 91rpx;
+  border-radius: 50%;
+  position: absolute;
+  top: 14rpx;
+  right: 64rpx;
+}
+view text{
+  color: #999;
+  position: absolute;
+}
+view input{
+  color: #999;
+  position: absolute;
+  right: 68rpx;
+  width: 99px;
+text-align: right;
+top: 35rpx;
+
+}
+view>text{
+  right: 34rpx;
+}
+
+button {
+  position: absolute !important;
+  background-color: transparent !important;
+  top: 60rpx;
+  border-radius: 50rpx;
+  border: 1rpx solid #fff;
+  border-radius: 49rpx !important;
+  font-weight: lighter !important;
+  top: 250rpx! important;
+  right: 10rpx;
+  width: 750rpx !important;
+  height: 120rpx;
+}

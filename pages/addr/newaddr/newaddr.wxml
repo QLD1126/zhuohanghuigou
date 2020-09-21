@@ -1,0 +1,22 @@
+<view>
+	收货人 
+	<input type="text" placeholder="姓名" value="{{FormData.real_name}}" confirm-type='next' bindblur='saveName' maxlength="6"/>
+</view>
+<view>
+	联系方式 
+	<input type="number" placeholder="手机号码" value="{{FormData.phone}}" confirm-type='next' bindblur	='savePhone' maxlength="11"/>
+</view>
+<view bindtap="goSelectAddrmap" class="addr">
+	收货地址 
+	<input type="text" value="{{mapaddressStr!==''?mapaddressStr:stroageaddr}}" confirm-type="go"  bindblur="saveAddress" placeholder="选择你的收货地址"/>
+	<text class="iconfont icon-fanhuizuojiantouxiangzuoshangyibuxianxing" ></text>
+</view>
+<view>
+	详细地址 
+	<input type="text" placeholder="详细地址需要填写楼栋楼层号" value="{{FormData.detail}}" confirm-type="done" bindblur='saveDetail' />
+</view>
+<view>
+	设置为默认地址
+	<switch checked="{{is_default}}" bindchange="setDefaultAddr"></switch>
+</view>
+<view bindtap="saveAddr" class="save">保存并使用</view>

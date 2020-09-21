@@ -1,0 +1,179 @@
+.container>view>view{
+  /* margin-bottom:100rpx; */
+  background: #fff;
+}
+.manage {
+  /* background: #fff; */
+  color: #FF5400;
+  font-size: 30rpx;
+  /* margin-left: 631rpx; */
+  line-height: 80rpx;
+  padding-left: 631rpx;
+  margin-top: -20rpx;
+  
+}
+.car .right-info {
+  background: #fff;
+  display: flex;
+  flex-flow: row nowrap;
+  padding: 20rpx;
+  margin: 20rpx 0;
+}
+
+.car .right-info>view {
+  flex: 0 0 58%;
+  position: relative;
+}
+
+.right-info>view>view:last-child {
+  position: absolute;
+  bottom: 20rpx;
+}
+.right-info icon{
+  position: relative;
+  top: 80rpx;
+}
+.car .detail-img {
+  width: 176rpx;
+  height: 176rpx;
+  margin: 10rpx;
+  margin-left: 30rpx;
+}
+
+.detail-title {
+  font-size: 28rpx;
+  color: #0F0F0F;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
+  overflow: hidden;
+}
+
+.detail-info {
+  font-size: 24rpx;
+  color: #505050;
+}
+
+.detail-number {
+  font-size: 20rpx;
+  color: #505050;
+}
+
+.detail-price {
+  display: flex;
+  justify-content: space-between;
+}
+
+.price {
+  font-size: 28rpx;
+  color: #F03C3C;
+}
+.price+text{
+  font-size: 26rpx;
+  color: #959595;
+  margin-left: 30rpx;
+}
+.setNum {
+  width: 180rpx;
+  left: 277rpx;
+  /* justify-content: space-between; */
+}
+
+.setNum>view,
+.setNum>input {
+  width: 54rpx;
+  height: 44rpx;
+  line-height: 44rpx;
+  border-radius: 6rpx 0 0 6rpx;
+  /* margin: 0 2rpx; */
+}
+/* .setNum>view{
+  margin-top: -2rpx ;
+} */
+.car .fh{font-size: 24rpx;}
+.setNum>input {
+  background: #E6E6E6;
+  font-size: 19rpx;
+  border-radius: 0;
+}
+.setNum>input+view{
+  border-radius: 0 6rpx 6rpx 0;
+}
+/* 失效订单 */
+.invalid-order{
+  opacity: .5;
+  margin-top: 20rpx;
+  margin-bottom: 200rpx;
+}
+.invalid-order .right-info>text{
+  position: relative;
+  top: 80rpx;
+  font-size: 28rpx;
+}
+/* 底部管理按钮 */
+.bot view {
+  flex: 0 0 33%;
+  /* background:#F03C3C; */
+  color: #fff;
+  text-align: center;
+}
+
+.bot .checkbox {
+  flex: 0 0 67%;
+  text-align: left;
+  color: #505050;
+}
+.bot icon{
+  position: relative;
+  top: 10rpx;
+  margin-left: 24rpx;
+}
+
+.checkbox .total {
+  font-size: 30rpx;
+  color: #FF5400;
+  position: relative;
+  right: -100rpx;
+  top: -15rpx;
+}
+.checkbox .dep_price{
+  color: #000;
+font-size: 20rpx;
+position: absolute;
+top: 20rpx;
+left: 255rpx;
+
+}
+
+/* 无商品 */
+.nopro {
+  width: 240rpx;
+  margin: 0 auto;
+  margin-top: 120rpx;
+  text-align: center;
+}
+
+.nopro image {
+  width: 228rpx;
+  height: 244rpx;
+  /* border: 1px dashed #666; */
+  margin-bottom: 60rpx;
+  margin-left: -52rpx;
+}
+
+.nopro view {
+  font-size: 28rpx;
+  color: #333;
+  margin-bottom: 60rpx;
+  background: transparent !important;
+}
+
+.nopro navigator {
+  width: 116px;
+  height: 80rpx;
+  background: #FF5400;
+  color: #fff;
+  line-height: 80rpx;
+  border-radius: 40rpx;
+  text-align: center;
+}

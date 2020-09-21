@@ -1,0 +1,55 @@
+		<view class="top" bindtap="editMedetail" wx:if="{{isLogin}}">
+			<image src="{{userinfo.avatar}}" mode="aspectFill" />
+			<text>{{nickName}}</text>
+		</view>
+		<view wx:else class="top">
+			<button class='bottom' type='primary' open-type="getUserInfo" lang="zh_CN" bindgetuserinfo="bindGetUserInfo" wx:if='{{canPhone}}'>授权登录</button>
+			<button class='bottom' type='primary' open-type="getPhoneNumber" bindgetphonenumber="getPhoneNumber" wx:else> 获取您的手机号</button>
+		</view>
+		<navigator class="order" url="../order/myorder/myorder?orderType=10">
+			我的订单
+			<view>全部 <text class='iconfont icon-fanhuizuojiantouxiangzuoshangyibuxianxing'></text> </view>
+		</navigator>
+		<view class="order-list">
+			<view bindtap="waitpay">
+				<image src="../../images/index/icon_daifukuan.png" mode="aspectFill" />
+				<text class="small-new" style="display:{{waitpayNum==0?'none':'inline-block'}}">{{waitpayNum}}</text>
+				<view>待付款</view>
+				<!-- <text>{{wa}}</text> -->
+			</view>
+			<view bindtap="waitAccept">
+				<image src="../../images/index/icon_daishouhuo.png" mode="aspectFill" />
+				<text class="small-new" style="display:{{shouNum==0?'none':'inline-block'}}">{{shouNum}}</text>
+
+				<view>待收货</view>
+			</view>
+			<view bindtap="Complate">
+				<image src="../../images/index/icon_yiwancheng.png" mode="aspectFill" />
+				<view>已完成</view>
+			</view>
+		</view>
+		<view class="other-serve">
+			<navigator class="nav-addr" url="../addr/myaddr/myaddr?urltype={{urltype}}">
+				<image src="../../images/index/dizhi1.png" />
+				我的地址
+				<text class='iconfont icon-fanhuizuojiantouxiangzuoshangyibuxianxing'></text>
+			</navigator>
+			<navigator class="nav-addr" url="../me/customer/customer">
+				<image src="../../images/index/kf.png" />
+				我的客服
+				<text class='iconfont icon-fanhuizuojiantouxiangzuoshangyibuxianxing'></text>
+			</navigator>
+			<navigator class="nav-addr" url="../deposit/deposit">
+				<image src="../../images/index/-e-yajin.png" />
+				退押金
+				<text class='iconfont icon-fanhuizuojiantouxiangzuoshangyibuxianxing'></text>
+			</navigator>
+			<view class="nav-addr" bindtap='toPromote' hidden="{{userinfo.is_promoter!==1}}">
+				<!-- <view > -->
+				<image src="../../images/index/-e-tuiguang.png" />
+				我的推广
+				<text class='iconfont icon-fanhuizuojiantouxiangzuoshangyibuxianxing'></text>
+				<!-- </view> -->
+			</view>
+		</view>
+		<!-- <navigator class="exit" bindtap="exit">退出当前账号</navigator> -->

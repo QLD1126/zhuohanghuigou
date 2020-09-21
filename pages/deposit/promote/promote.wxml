@@ -1,0 +1,38 @@
+<image src='../../../images/index/-e-image.png' />
+<view class="two">
+	<view>推广仅限新用户</view>
+	<image src='{{wxaCode}}' mode='aspectFill	'/>
+	<view bindtap="save" data-url='{{wxaCode}}'>保存本地</view>
+	<!-- 推广记录 -->
+	<view class="promote">
+		<view>推广记录</view>
+		<view class="promote-item">
+			<view>
+				<view>{{userdata.spread_count}}</view>
+				<view>邀请成功(人)</view>
+			</view>
+			<view>
+				<view>{{userdata.brokerage_price}}</view>
+				<view>获得奖励（元）</view>
+			</view>
+		</view>
+	</view>
+	<!-- 所有记录 -->
+	<view class="promote p-all">
+		<view wx:for="{{promote}}" wx:key="index">
+			<view wx:if="{{index==0}}">本月<text>{{item.month}}</text></view>
+			<view wx:else>{{item.month}}<text></text></view>
+			<view class="promote-item">
+				<view>
+					<view>{{item.spreadCount}}</view>
+					<view>邀请成功(人)</view>
+				</view>
+				<view>
+					<view>{{item.brokeragePrice}}</view>
+					<view>获得奖励（元）</view>
+				</view>
+			</view>
+		</view>
+	</view>
+	<text>从注册的月份开始统计</text>
+</view>

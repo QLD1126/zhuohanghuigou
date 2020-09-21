@@ -1,0 +1,36 @@
+		<view class="container">
+			<!-- 左侧列表 -->
+			<scroll-view class="list-left" scroll-y='true' scroll-with-animation="true">
+				<!-- <view class="list-left"> -->
+				<view wx:for="{{categorylist}}" wx:key="index" class="{{index==currentLeft?'font-active':''}}" data-index="{{index}}" bindtap="proItemTap">
+					{{item.cate_name}}
+				</view>
+				<!-- </view> -->
+			</scroll-view>
+			<!-- 右侧列表 -->
+			<scroll-view class="list-right" scroll-y='true' enable-back-to-top='true' scroll-into-view="{{selectId}}" scroll-with-animation='true' scroll-top='{{scrollTops}}' style='height:{{asideheight}}px' bindscroll="scrollEvent">
+				<!-- <view class="'list-right'"> -->
+				<!-- id要用来实现点击左侧右侧滚动至相应位置的效果；class（pro-box）要用来计算右侧对应左侧某一分类的高度 -->
+				<!-- id: item0, item1, item2... （注意：不能直接使用数字或汉字做id）-->
+				<!-- <view wx:for="{{categorylist}}"  wx:for-item="citem" wx:key='{{cirem.id}}' class="class-item"  id='{{"item"+citem.id}}'> -->
+				<!-- <view wx:for="{{prolist}}" wx:key='index' wx:if="{{item.cate_id==cate_id}}"  class="right-info"> -->
+				<view wx:for="{{prolist}}" wx:key='index' class="right-info">
+					<image src="{{item.image}}" mode="" class="detail-img" bindtap="goDetail" data-id="{{item.id}}" />
+					<view>
+						<view class="detail-title">{{item.store_name}}</view>
+						<view class="detail-info">{{item.store_info}}</view>
+						<view class="detail-number">月售{{item.month_sales}}</view>
+						<view class="detail-price">
+							<text class="price"><text class="fh">￥</text>{{item.price}}</text>
+							<image class="car" wx:if="{{item.cart_num==0}}" src="../../images/index/icon_gouwuche.png" bindtap="addCar" data-index="{{index}}" />
+							<view class="setNum" wx:else>
+								<view bindtap="changeNum" class="{{item.cart_num==1?'disabled':'active'}}" data-index="{{index}}" data-sym="min">-</view>
+								<input type="text" value="{{item.cart_num}}" bindblur='bindblur' data-index="{{index}}" />
+								<view bindtap="changeNum" class="btn-active" data-index="{{index}}" data-sym="add">+</view>
+							</view>
+						</view>
+					</view>
+					<!-- </view> -->
+				</view>
+			</scroll-view>
+		</view>

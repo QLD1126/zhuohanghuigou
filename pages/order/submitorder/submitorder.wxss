@@ -1,0 +1,213 @@
+/* miniprogram/pages/order/submitorder/submitorder.wxss *//* pages/waitpay/waitpay.wxss */
+/* 顶部 */
+/* .container{background: #fbfbfb;} */
+.container{padding-top: 0;}
+/* .container>view:first-child{
+  margin-bottom: 101rpx;
+} */
+.container>view {
+  margin-bottom: 6rpx;
+  /* background: #fff; */
+  font-size: 28rpx;
+}
+.fh{font-size: 24rpx;}
+
+/* 订单地址开始 */
+.addr {
+  width: 100%;
+  height: 130rpx;
+  display: flex;
+  align-items: center;
+  background: #fff;
+  margin-bottom: 20rpx;
+}
+
+.addr>view:first-child {
+  flex: 0 0 25%;
+  text-align: center;
+}
+
+.addr>view:last-child {
+  flex: 0 0 70%
+}
+/* .addr>view:last-child>view:last-child{
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 1;
+  overflow: hidden;
+} */
+/* 订单地址结束 */
+/* 订单商品列表开始 */
+
+.pro-detail {
+  background: #fff;
+  display: flex;
+  margin-bottom:4rpx;
+  display: relative;
+  /* width: 710rpx; */
+}
+
+.detail-img {
+  width: 175rpx;
+  height: 175rpx;
+  margin: 45rpx 20rpx 43rpx 43rpx;
+}
+
+.pro-info {
+  /* height: 100px; */
+  flex: 0 0 70%;
+  margin:44rpx 0;
+}
+
+.detail-title {
+  width: 430rpx;
+  font-weight: Medium;
+  font-size:30rpx;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
+  overflow: hidden;
+}
+.detail-title+.num {
+  color: #666;
+  font-size: 24rpx;
+  position: relative;
+  right: 49rpx;
+  top: -42rpx;
+  left: 454rpx;  
+}
+.detail-price {
+  width: 100%;
+  color: #F03C3C;
+  position: relative;
+  top: 44rpx;
+}
+
+.detail-price>text:last-child{
+  font-size: 28rpx;
+  color: #505050;
+  position: absolute;
+  right: 50rpx;
+}
+.wait{  
+  text-align: right;
+  height: 78rpx;
+  line-height: 78rpx;
+  padding-right: 28rpx;
+  background: #fff;
+  margin-bottom: 20rpx;
+}
+.wait text{
+  color: #F03C3C;
+}
+
+/* 订单商品列表结束 */
+/* 订单信息详情 */
+.order {
+  font-size: 28rpx;
+  color: #505050;
+  padding-left: 20rpx;
+  background: #fbfbfb;
+}
+.order>view{
+  background: #fff;
+}
+.order>view:first-child {
+  margin-bottom: 4rpx;
+  height: 56rpx;
+  line-height: 56rpx;
+  background: #fff;
+}
+.order .wx{
+  height: 115rpx;
+  line-height:115rpx ;
+  margin-bottom: 20rpx;
+}
+.wx image{
+  width:40rpx ;
+  height:40rpx ;
+  position: relative;
+  top: 10rpx;
+}
+.wx icon{
+  position: relative;
+  top: 10rpx;
+  left: 503rpx;
+}
+/* .order>view>view{} */
+.wx>view {
+  height: 88rpx;
+  line-height: 88rpx;
+  color: #505050;
+  background: #fff;
+  position: relative;
+  color: #181818;
+  /* padding-left: 18px; */
+}
+
+.wx text {
+  font-size: 28rpx;
+  color: #666;
+  position: absolute;
+  right: 36rpx;
+}
+/* 订单信息结束 */
+/* 备注留言开始 */
+.ly{
+  /* height: 142rpx; */
+  background: #fff;
+  padding: 22rpx 0 0 22rpx
+}
+.ly>view{
+  color: #505050;
+  margin-bottom: 22rpx;
+}
+.ly>input{
+  color: #969696;
+  font-size:26rpx ;
+  width: 700rpx;
+  height: 100rpx;
+}
+/* 备注留言结束 */
+/* 底部按钮 */
+.bot{
+  height: 100rpx;
+  line-height: 100rpx;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  position: fixed;
+bottom: 0;
+margin: 0 !important;
+z-index: 20;
+}
+.bot .fh{
+  color:#FF5400 !important;
+}
+.bot>view:first-child{
+  color: #F03C3C;
+  flex: 0 0 48%;
+  background: #fff;
+  /* margin-left: 30rpx; */
+  position: relative;
+  left: -48rpx;
+}
+
+.bot>view:last-child{
+  flex:0 0 52%;
+  /* text-align: center; */
+  text-align: right;
+  color: #fff;
+}
+.cancel,.pay{
+  display: inline-block;
+  width: 50%;
+  height: 100rpx;
+  background: #FF5400;
+  text-align: center;
+}
+.cancel{background:#CACACA;}
+
+.ly+view{
+  margin-top: 100rpx;
+}

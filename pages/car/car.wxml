@@ -1,0 +1,90 @@
+<view class="container car">
+	<!-- 购物车有商品 -->
+	<view wx:if="{{valid.length!==0}}">
+		<view class="manage" wx:if="{{dodel==true}}" bindtap="doDel">完成</view>
+		<view class="manage" wx:else bindtap="doDel">管理</view>
+		<view class="right-info" wx:for="{{valid}}" wx:key='index'>
+			<!-- wx:if 是否选择显示不同图标 -->
+			<icon wx:if="{{item.selected}}" type="success" color="#F03C3C" bindtap="selectList" data-index="{{index}}" />
+			<icon wx:else type="circle" bindtap="selectList" data-index="{{index}}" />
+			<!-- 点击图片跳转到商品详情 -->
+			<navigator url="../prodetail/prodetail?id={{item.productInfo.id}}">
+				<image src="{{item.productInfo.image}}" mode="" class="detail-img" />
+			</navigator>
+			<view>
+				<view class="detail-title">{{item.productInfo.store_name}}</view>
+				<view class="detail-price">
+					<text class="price"><text class="fh">￥</text>{{item.productInfo.price}}</text>
+					<text>押金:{{item.productInfo.dep_price}}</text>
+					<!-- 增减按钮 -->
+					<view class="setNum">
+						<view bindtap="changeNum" class="{{item.cart_num==1?'disabled':'active'}}" data-index="{{index}}" data-sym="min">-</view>
+						<input type="text" value="{{item.cart_num}}" bindblur='bindblur' data-index="{{index}}" />
+						<view bindtap="changeNum" class="btn-active" data-index="{{index}}" data-sym="add">+</view>
+					</view>
+				</view>
+			</view>
+
+		</view>
+		<view class="invalid-order">
+			<view class="right-info" wx:for="{{invalid}}" wx:key='index'>
+				<text>失效</text>
+				<!-- 点击图片跳转到商品详情 -->
+				<navigator url="../prodetail/prodetail?id={{item.productInfo.id}}">
+					<image src="{{item.productInfo.image}}" mode="" class="detail-img" />
+				</navigator>
+				<view>
+					<view class="detail-title">{{item.productInfo.store_name}}</view>
+					<view class="detail-price">
+						<text class="price"><text class="fh">￥</text>{{item.productInfo.price}}</text>
+					</view>
+				</view>
+			</view>
+		</view>
+		<!-- 无购买权限开始 -->
+		<!-- <view hidden="{{is_pay==1}}" bindtap="showComponent">
+		<no-buy id="noBuy"></no-buy>
+		</view> -->
+		<!-- 底部管理按钮-->
+		<view>
+			<!-- 结算状态 -->
+			<view class="bot" wx:if="{{dodel!==true}}">
+				<view class="checkbox">
+					<icon wx:if="{{selectAllStatus}}" type="success" color="#F03C3C" bindtap="selectAll" />
+					<icon wx:else type="circle" color="#969696" bindtap="selectAll" />
+					全选
+					<text class="total">合计:￥{{totalPrice}}</text>
+					<text class="dep_price">含包装押金:￥{{totalDep}}</text>
+				</view>
+				<!-- <text class="dep_price">含包装押金:￥1111111</text> -->
+				<view wx:if="{{totalPrice<lowestPrice}}" style="background:#C0C0C0">￥25 起送</view>
+				<view wx:else style="background:#FF5400" bindtap="confirmOrder">结算</view>
+			</view>
+			<!-- 删除状态 -->
+			<view class="bot" wx:else>
+				<view class="checkbox">
+					<icon wx:if="{{selectAllStatus}}" type="success" color="#F03C3C" bindtap="selectAll" />
+					<icon wx:else type="circle" color="#969696" bindtap="selectAll" />
+					全选
+				</view>
+				<view wx:if="{{dodel==true}}" style="background:#F03C3C" bindtap="meShowModal">删除</view>
+			</view>
+		</view>
+	</view>
+	<!-- 购物车无商品 -->
+	<view wx:else class="nopro">
+		<image src="../../images/index/11812259@3x.png" mode="aspectFill" />
+		<view>购物车还是空的</view>
+		<navigator bindtap="goIndex">去逛逛</navigator>
+	</view>
+</view>
+<!-- showmodal组件 -->
+<!-- <show-modal id="meShowModal" wx:if="{{isShow}}" ishow="{{ishow}}"></show-modal> -->
+<!-- 弹出组件 -->
+<view class="mask" wx:if="{{isShow}}">
+	<view class="model">
+		<view>确定删除勾选商品吗？</view>
+		<text bindtap="meCancel">取消</text>
+		<text bindtap="meConfirm">确认</text>
+	</view>
+</view>

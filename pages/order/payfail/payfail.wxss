@@ -1,0 +1,23 @@
+/* miniprogram/pages/order/payfail/payfail.wxss */
+.container{
+  width: 750rpx;
+  height: 503rpx;
+  background: #fff;
+  margin-top: 20rpx;
+  text-align: center;
+  font-size: 32rpx;
+  padding-top:66rpx ;
+}
+image{
+  width: 89rpx;
+  height: 89rpx;
+  margin: 20rpx;
+}
+image+view{
+  font-weight:bold ;
+  margin-bottom: 67rpx;
+}
+.container>view:last-child text{
+  color: rgb(38, 114, 214);
+  text-decoration: underline;
+}

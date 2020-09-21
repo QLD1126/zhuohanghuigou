@@ -1,0 +1,112 @@
+/* pages/myaddr/myaddr.wxss */
+
+.addr-detail {
+  width: 100%;
+  height: 200rpx;
+  display: flex;
+  padding:20rpx;
+  background: #fff;
+  margin-bottom:4rpx;
+  position: relative;
+}
+
+.addr-info {
+  flex: 0 0 80%;
+  /* line-height: 1.7; */
+}
+
+.addr-info>view {
+  margin-bottom:20rpx;
+}
+
+.addr01 {
+  font-size:32rpx;
+  color: #282828;
+}
+
+.addr02 {
+  font-size:26rpx;
+  color: #A9A9A9;
+}
+
+.addr-phone {
+  color: #666;
+  font-size: 14px;
+}
+
+.addr-edit {
+  flex: 0 0 35%;
+  color: #A9A9A9;
+  position: relative;
+  /* left: 113rpx; */
+  /* z-index: 10; */
+}
+
+.addr-edit>view {
+  width: 50%;
+  display: inline-block;
+  height: 240rpx !important;
+  text-align: center;
+  height: 44rpx;
+  margin-top: -21rpx;
+  
+}
+.addr-bj>view{
+  font-size:26rpx ;
+}
+.addr-edit>view>image{
+  margin-top:44rpx;
+}
+
+.addr-edit image {
+  width:36rpx;
+  height:36rpx;
+}
+
+.addr-delete {
+  color: #fff;
+  background:#FF5050 ;
+  font-size: 32rpx;
+}
+.addr-bj image{
+  width: 35rpx;
+  height: 32rpx;
+}
+.addr-delete image{
+  width: 44rpx;
+  height: 44rpx;
+}
+
+
+navigator {
+  width:496rpx;
+  height:90rpx;
+  background: #FF5400;
+  font-weight: lighter;
+  font-size:32rpx;
+  color: #fff;
+  border-radius:10rpx;
+  line-height:90rpx;
+  text-align: center;
+  margin:72rpx auto;
+}
+/* 无收获地址 */
+.noaddr{
+  width:260rpx;height:320rpx;
+  /* border:2rpx dashed #666; */
+  text-align: center;
+  margin: 0 auto;
+  padding:10rpx;
+  position: relative;
+}
+.noaddr image{
+  width: 100%;height: 100%;
+
+}
+.noaddr view{
+  font-size:32rpx;
+  color: #333;
+  position: relative;
+  bottom: 66rpx;
+}
+

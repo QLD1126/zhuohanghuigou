@@ -1,0 +1,51 @@
+<view class="container">
+	<!-- 我的押金 -->
+	<view hidden="{{currentTab!==1}}" class="top">
+		<text>我的押金（元）：</text>
+		<text class="fh">{{dep_total}}</text>
+		<view bindtap="{{dep_total=='0.00'?'nodep':'#meShowModal'}}" style="background:{{dep_total=='0.00'?'#999':'#FF5400'}}">退押金</view>
+	</view>
+	<!-- 收款码 -->
+	<view hidden="{{currentTab!==2}}" class="top" catchtap="toRefund">
+  	<text>我的收款码</text>
+	<navigator>
+	<text wx:if="{{receiving_qr_img==''}}" class="a">未设置</text>
+	<text wx:else class="a">点击查看</text>
+	<text class="iconfont icon-fanhuizuojiantouxiangzuoshangyibuxianxing"></text> </navigator>
+	</view>
+	<!-- l历史记录 -->
+	<view class="history">
+		<view>历史记录</view>
+		<view class="line"></view>
+		<!-- 顶部导航栏 -->
+		<view class="navbar">
+			<text wx:for="{{navbar}}" wx:key="index" data-idx="{{index+1}}" class="{{currentTab==index+1 ? '.nav-active' : ''}}"  bindtap="navbarTap">{{item}}</text>
+		</view>
+		<!-- 退押金 -->
+		<view class="item" wx:for="{{depList}}" wx:key="index" bindtap="meShowModal" data-orderid="{{item.order_id}}">
+			<view>申请退押金{{item.dep_price}}元</view>
+			<view>
+				<!-- <text wx:if="{{item.dep_refund_status==2}}">待骑手上门取包装物</text> -->
+				<text wx:if="{{item.dep_refund_status==0}}">待退押金</text>
+				<text wx:if="{{item.dep_refund_status==1}}">待骑手上门取包装物</text>
+				<text wx:if="{{item.dep_refund_status==2}}">已取包装物，等待平台确认</text>
+				<text wx:if="{{item.dep_refund_status==3}}">退款成功</text>
+				<!-- 0待退 -->
+				<text wx:if="{{item.dep_refund_status==0}}">{{item.add_time}}</text>
+				<!-- 3成功 -->
+				<text wx:elif="{{item.dep_refund_status==3}}">{{item.dep_refund_time}}</text>
+				<!-- 其他退款中 -->
+				<text wx:else>{{item.dep_start_time}}</text>
+			</view>
+		</view>
+	</view>
+</view>
+<!-- 弹出组件 -->
+<view class="mask fff" wx:if="{{isShow}}">
+	<view class="model">
+		<view >确认退还押金？</view>
+    <view class="t">将有骑手上门取包装物</view>
+		<text bindtap="getRes" data-res='no'>取消</text>
+		<text bindtap="getRes" class="nav-active" data-res='ok'>确认</text>
+	</view>
+</view>

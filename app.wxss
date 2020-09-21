@@ -1,0 +1,174 @@
+@import './style/iconfont.wxss';
+/* *{  font-family: PingFang SC Medium;} */
+page{background: #fafafa;}
+.container {
+  padding-top:20rpx;
+  background: #fafafa;
+  font-family: PingFang SC Medium;
+  width: 750rpx;
+}
+/* 顶部选项选中 */
+.nav-active {
+  color: #FF5400 !important;
+}
+/* 为底部按钮预留位置 */
+.container>view:first-child{
+  margin-bottom: 110rpx;
+}
+
+
+/* .detail-title{font-weight: bold;} */
+.detail-info {
+  color: #666;
+  font-size:22rpx;
+}
+
+.detail-number {
+  color: #FF5400;
+  font-size:22rpx;
+}
+
+.detail-price {
+  position: relative;
+}
+
+.price {
+  color: #F03C3C;
+  font-size: 32rpx;
+  font-weight: Regular;
+}
+/* 价格符号 */
+.fh {
+  font-size:24rpx !important;
+  color: #F03C3C;
+}
+.detail-price .car {
+  width:44rpx;
+  height:44rpx;
+  position: absolute;
+  right: 0px;
+  top: 0;
+}
+/* 修改数量的按钮和框 */
+.detail-price .setNum {
+  /* width: 72px; */
+  display: inline-block;
+  text-align: center;
+  position: absolute;
+  right: 10rpx;
+  top: 0;
+
+}
+.setNum>view:first-child{
+  color: #969696;
+  /* font-size: 19rpx; */
+  /* font-weight: bold; */
+}
+.setNum>view,
+.setNum>input {
+  display: inline-block;
+  background: #F5F5F5;
+  height: 30rpx;
+  width: 30rpx;
+  color: #fff;
+  line-height: 30rpx;
+  border-radius:6rpx;
+}
+
+.setNum>input {
+  margin-bottom: -10rpx;
+  background: transparent;
+  color: #181818;
+  font-size: 24rpx;
+}
+.btn-active {
+  background: #FF5400 !important
+}
+
+/* 底部按钮 */
+.bot {
+  width: 100%;
+  height:100rpx;
+  position: fixed;
+  bottom: 0;
+  /* margin-top: 44px; */
+  display: flex;
+  justify-content: center;
+  line-height:100rpx;
+  background: #fff;
+  z-index: 99;
+  text-align: center;
+}
+/* 红色小圆点 */
+.small-new{
+  display: inline-block;
+  border-radius: 50%;
+  background: #F03C3C;
+  color: #fff;
+  position: absolute;
+}
+/* components/showModel/showModel.wxss */
+/* 弹出的模态框 */
+.mask{
+  position: fixed;
+  top: 0;
+  width: 750rpx;
+  height: 100vh;
+  background: rgba(161, 161, 161, 0.582);
+  z-index: 5;
+  }
+  .model{
+    margin: 198rpx auto;
+    width: 563rpx;
+    height: 312rpx;
+    background: #fff;
+    font-size:30rpx ;
+    color: #333;
+    text-align: center;
+    border-radius: 10rpx;
+    overflow: hidden;
+    z-index: 5;
+  }
+  .model view{
+    height:222rpx;
+    line-height: 222rpx;
+  }
+  .model text{
+    display: inline-block;
+    height: 92rpx;width: 280.5rpx;
+    line-height: 92rpx;
+    background: rgb(236, 234, 234);
+  }
+  .model>text:last-child{
+    border-left: 1rpx solid #cac8c8;
+  }
+  .fff .t{
+    position: absolute;
+    top: 255rpx;
+    left: 225rpx;
+  }
+  .fff>view>view:first-child{
+    position: relative;
+    top: -34rpx;
+    font-weight: bold;    
+  }
+  .fff text{
+    width: 280.5rpx;
+    margin-top: 1rpx;
+  }
+  /* 三级联动 */
+.fl{float: left}
+.fr{float: right}
+/*选择器*/
+.selector{ width: 100%; position: fixed; bottom: 0; left: 0; z-index: 999999}
+.selector .inner_box{ position: relative; z-index: 999999}
+.selector .header_box{ padding: 25rpx 0; overflow: hidden; box-sizing: border-box; background: #FBF9FE;}
+.selector .header_box .item{ float: left; font-size: 34rpx; color: #586C94; box-sizing: border-box;}
+.selector .header_box .l{ width: 25%; padding-left: 25rpx;}
+.selector .header_box .c{ width: 50%; text-align: center}
+.selector .header_box .r{ width: 25%; text-align: right; padding-right: 25rpx;}
+.selector .selected{ height: 90rpx;}
+.selector .picker_box{ width: 100%; height: 485rpx; background: #fff;}
+.selector .picker_box picker-view-column{ text-align: center;}
+.selector .picker_box picker-view-column view{ line-height: 90rpx;}
+.selector .layer{ width: 100%; height: 100%; position: fixed; left: 0; top: 0; z-index: 10; background:rgba(0,0,0,0.5); }

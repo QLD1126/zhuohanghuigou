@@ -1,0 +1,10 @@
+<view class="mask" >
+	<view class="model">
+		<view wx:if="{{modeltitle=='addr'}}">确认删除地址?</view>
+		<view wx:elif="{{modeltitle=='order'}}">确认取消待支付订单?</view>
+		<view wx:elif="{{modeltitle=='exit'}}">确定退出登录？</view>
+		<view wx:else>确定删除勾选商品吗？</view>
+		<text bindCancel="meCancel">取消</text>
+		<text bindConfrim="meConfirm">确认</text>
+	</view>
+</view>

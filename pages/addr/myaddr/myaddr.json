@@ -1,0 +1,6 @@
+{
+  "usingComponents": {
+    "show-modal":"/components/showModal/showModal"
+  },
+  "navigationBarTitleText": "我的收货地址"
+}

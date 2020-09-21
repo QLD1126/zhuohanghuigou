@@ -1,0 +1,210 @@
+/* pages/selectaddr/selectaddr.wxss */
+/* 搜索框部分开始 */
+.top-search{
+  background: #fff;
+  /* position: relative; */
+  position: fixed;
+  width: 750rpx;
+  height: 91rpx;
+  line-height: 91rpx;
+  position: fixed;
+  top: 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 30rpx;
+}
+.top-search .location{
+  flex:0 0 30%;
+  text-align: center;
+}
+.top-search .icon-dingwei{
+font-size: 34rpx;
+color: #FF5400;
+}
+.top-search .icon-xiangxia{
+  font-size: 18rpx;
+  color: #222;
+  font-weight: bold;
+  margin-left: 12rpx;
+}
+.top-search .icon-sousuo{
+  position: absolute;
+  left: 250rpx;
+  top: 0;
+  font-size: 38rpx;
+  color: #888;
+}
+.top-search input{
+  background: #eeeded;
+  border-radius: 33rpx;
+  flex:0 0 45%;
+  height: 66rpx;
+  padding-left: 80rpx;
+  font-size: 28rpx;
+  /* margin: 0 20rpx 0 35rpx; */
+  margin-right: 20rpx;
+
+}
+.top-search .search{
+  flex: 0 0 20%;
+  color: #535353;
+}
+/* 搜索框结束 */
+/* 公共样式 */
+.addr-item {
+  width: 690rpx;
+  background: #fff;
+  font-size: 30rpx;
+  padding: 30rpx;
+  margin-bottom: 4rpx;
+}
+.addr-user {
+  display: inline-block;
+  font-size: 26rpx;
+  color: #777;
+  margin-top: 13rpx;
+  margin-right: 17rpx;
+}
+/* 当前地址 */
+.now-addr {
+  width: 630rpx !important;
+  position: relative;
+  top: 689rpx;
+  left: 30rpx;
+  display: flex;
+  align-self: center;
+  border-radius: 10rpx;
+}
+.now-addr .now {
+  flex: 0 0 20%;
+  color: #FF5400;
+  line-height: 74rpx;
+}
+.select-addr{
+  overflow-y: auto;
+}
+.inputaddr{
+  width: 70%;
+}
+/* 地址结果列表 */
+.addr-list {
+  background: #fafafa;
+  position: relative; 
+}
+/* 共有样式结束 */
+/* 进入含有地图页面 */
+.map-addr .addr-list{
+  margin-top: 705rpx;
+}
+/* 点击定位青岛后地址列表 */
+.my-addr{
+  top: 0 !important;
+}
+.right-location{
+  position: fixed;
+  top: 100rpx;
+  z-index: 99;
+  background: #fafafa;
+  margin-top: -14rpx;
+  height: 1000px;
+}
+.title{
+  font-size:22rpx ;
+  color: #808080;
+  padding: 10rpx 20rpx;
+}
+.now-addr>text:last-child{
+  position: absolute;
+  right: 101rpx;
+  color: #FFAD39;
+  font-size: 26rpx;
+  top:35%;
+}
+.right-location .now-addr{
+  top: 0;
+  margin-left: -30rpx;
+  width: 750rpx !important;
+}
+.right-location .addr-list{
+  top: 0;
+}
+
+/* components/search/search.wxss */
+/* components/search/search.wxss */
+/* 搜索框部分开始 */
+.map-search{
+  background: #fff;
+  /* position: relative; */
+  position: fixed;
+  width: 750rpx;
+  height: 90rpx;
+  line-height: 90rpx;
+  position: fixed;
+  top: 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-left: 18rpx;
+  font-size: 30rpx;
+}
+.map-search .location{
+  flex:0 0 20%;
+
+}
+.map-search .location cover-view,cover-image{
+  display: inline-block !important;
+  position: relative;
+}
+.map-search .icon-dingwei{
+font-size: 32rpx;
+color: #FF5400;
+top: -2rpx;
+}
+.map-search .icon-xiangxia{
+  font-size: 18rpx;
+  color: #222;
+  font-weight: bold;
+  top: -10rpx;
+  left: 10rpx; 
+}
+.map-search .icon-sousuo{
+  position: absolute !important;
+  left: 228rpx;
+  top: 24rpx;
+  font-size: 38rpx;
+  color: #888;
+}
+.map-search .virtual-input{
+  background: #eeeded;
+  border-radius: 33rpx;
+  flex:0 0 45%;
+  height: 66rpx;
+  padding-left: 80rpx;
+  font-size: 28rpx;
+  margin: 0 20rpx 0 35rpx;
+  font-size: 26rpx;
+color: #888;
+line-height: 2.6;
+}
+.map-search .search{
+  flex: 0 0 20%;
+  color: #535353;
+}
+/* 搜索框结束 */
+/* 无搜索结果*/
+.nores-city{
+  width:750rpx;
+  margin:0 auto ;
+  margin-top:250rpx ;
+  text-align: center;
+}
+.nores-city image{
+  width: 208rpx;
+  height: 240rpx;  
+}
+.nores-city view{
+  font-size:28rpx;
+  color: #666;
+}
+

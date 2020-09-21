@@ -1,0 +1,55 @@
+<view class="navbar">
+	<text wx:for="{{navbar}}" wx:key="index" data-idx="{{index}}" class="{{currentTab==index ? '.nav-active' : ''}}"  bindtap="navbarTap">{{item}}</text>
+</view>
+<!-- 全部 -->
+<view>
+	<!--  待付款-->
+	<view wx:for="{{orderList}}" wx:key="index" wx:for-item="item">
+		<view class="nav-title" wx:if="{{item._status._type==0}}">待付款</view>
+		<view class="nav-title" wx:elif="{{item._status._type==1}}">待收货</view>
+		<view class="nav-title" wx:elif="{{item._status._type==2}}">已完成</view>
+		<view class="nav-title" wx:else>已取消</view>
+		<!-- 订单商品列表开始 -->
+		<view>
+			<view class="pro-list">
+				<navigator url="../waitpay/waitpay?orderid={{item.order_id}}" class="pro-detail" wx:for="{{item.cartInfo}}" wx:key="index" wx:for-item="sitem">
+					<image src="{{sitem.productInfo.image}}" class="detail-img" />
+					<view class="pro-info">
+						<view class="detail-title">
+							{{sitem.productInfo.store_name}}
+							<text>x{{sitem.cart_num}}</text>
+						</view>
+						<view class="detail-price">
+							<text class="fh">￥</text>
+							<text>{{sitem.productInfo.price}}</text>
+							<text>包装押金：{{sitem.productInfo.dep_price}}</text>
+						</view>
+					</view>
+				</navigator>
+			</view>
+			<!-- 合计价格/查看全部 -->
+			<view class="wait" catchtap="goOrderdetail" data-orderid="{{item.order_id}}">
+				共{{item.total_num}}件
+				<text class="fh">￥{{item.pay_price}}</text>
+				<navigator style="display:{{item.cartInfo.length>=3?'inline-block':'none'}}" class="nav-btn">查看全部商品<text class="iconfont icon-fanhuizuojiantouxiangzuoshangyibuxianxing"></text></navigator>
+			</view>
+			<!-- 合计价格/查看全部 -->
+			<!-- 待支付 -->
+			<!-- 取消/支付 -->
+			<view class="select-btn" wx:if="{{item._status._type==0}}">
+				<view class="nav-order cancel-order" bindtap="cancelOrder" data-orderid='{{item.order_id}}'>取消订单</view>
+				<view class="nav-order pay-order" bindtap="payOrder" data-orderid="{{item.order_id}}">去支付</view>
+			</view>
+			<!-- 再来一单 -->
+			<view class="select-btn" catchtap="againOrder" data-orderid="{{item.order_id}}" wx:elif="{{item._status._type==-1}}">
+				<view class="nav-order pay-order">再来一单</view>
+			</view>
+			<view class="select-btn" catchtap="againOrder" data-orderid="{{item.order_id}}" wx:elif="{{item._status._type==2}}">
+				<view class="nav-order pay-order">再来一单</view>
+			</view>
+			<view wx:else style='border:none'></view>
+			<!-- 再来一单 -->
+		</view>
+		<!-- 订单商品列表结束 -->
+	</view>
+</view>

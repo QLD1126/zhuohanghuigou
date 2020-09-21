@@ -1,0 +1,89 @@
+<!-- 城市选择器开始 -->
+<view hidden="{{isCity==false||cityData==''}}" class="selector">
+	<view class="inner_box">
+		<view class="header_box">
+			<view class="item l" data-act="cancel" data-mold="city" bindtap="ideChoice">取消</view>
+			<view class="item c">请选择</view>
+			<view class="item r" data-act="confirm" data-mold="city" bindtap="ideChoice">确定</view>
+		</view>
+
+		<picker-view class="picker_box" indicator-class="selected" value="{{cityValue}}" bindchange="cityChange">
+			<picker-view-column>
+				<view wx:for="{{provinces}}" wx:key='index'>{{item}}</view>
+			</picker-view-column>
+			<picker-view-column>
+				<view wx:for="{{citys}}">{{item}}</view>
+			</picker-view-column>
+			<picker-view-column>
+				<view wx:for="{{countys}}" data-cityId="{{item.value}}">{{item}}</view>
+			</picker-view-column>
+		</picker-view>
+	</view>
+	<view class="layer"></view>
+</view>
+<!-- 城市选择器结束 -->
+<view>
+	<!-- <button open-type="getPhoneNumber" bindgetphonenumber="getPhoneNumber">获取手机号</button> -->
+	<view class="container">
+		<view>
+			<view class="location" bindtap="choiceCity">
+				<image src="../../images/index/yiyuan_dingwei.png" class="img"></image>
+				<!-- <text>财富中心B座></text> -->
+				<!-- <text wx:if="{{city==''}}">{{nowcity}}</text> -->
+				<text>{{city}}</text>
+				<text class="dqdw">{{street}}</text>
+			</view>
+			<view class="search">
+				<image src="../../images/index/sous.png" class="sous" />
+				<input type="search" value="{{keyword}}" class="search-input" placeholder="零食/食品/蔬菜" bindtap="toSearch" />
+			</view>
+			<view class="swiper-main">
+				<swiper class="swiper-img" indicator-dots="{{true}}" indicator-active-color="#fff" circular autoplay interval="3000">
+					<block wx:for="{{banner}}" wx:key="index">
+						<swiper-item>
+							<image class="swiper-img" src="{{item.pic}}" bindtap="goDetail" data-index="{{item.id}}" data-url="{{item.url}}" mode="aspectFit"/>
+						</swiper-item>
+					</block>
+				</swiper>
+			</view>
+			<!-- 十个小分类 -->
+			<view class="recom">
+				<view wx:for="{{category}}" wx:key='index' class="recom-list" data-index="{{index}}" bindtap="goCategory">
+					<image src="{{item.pic}}" class="recom-img" alt='图片'></image>
+					<view class="text">
+						{{item.cate_name}}
+					</view>
+				</view>
+			</view>
+			<!-- 热门推荐 -->
+			<text class="title01">热门推荐</text>
+			<view class="tj-list" wx:if="{{hotProduct}}">
+				<view class="tj-detail" wx:for="{{hotProduct}}" wx:key='index'>
+					<image src="{{item.image}}" mode="" class="detail-img" bindtap="goDetail" data-index="{{item.id}}" />
+					<view class="detail-title">{{item.store_name}}</view>
+					<view class="detail-info">{{item.store_info}}</view>
+					<view class="detail-number">月售{{item.month_sales}}</view>
+					<view class="detail-price">
+						<text class="price"><text class="fh">￥</text>{{item.price}}</text>
+						<!-- 购物权限 -->
+						<view hidden="{{is_pay==0}}">
+							<image class="car" wx:if="{{item.cart_num==0}}" src="../../images/index/icon_gouwuche.png" bindtap="addCar" data-index="{{index}}" />
+							<!-- 增减按钮 -->
+							<view class="setNum" wx:else>
+								<view bindtap="changeNum" :class="{{item.cart_num==1?'disabled':'active'}}" data-index='{{index}}' data-sym="min">-</view>
+								<input type="text" value="{{item.cart_num}}" bindblur="blurCarNum" data-index="{{index}}" />
+								<view bindtap="changeNum" class="btn-active" data-index='{{index}}' data-sym='add'>+</view>
+							</view>
+						</view>
+					</view>
+				</view>
+			</view>
+		</view>
+		<!-- 无购买权限开始 -->
+		<!-- 组件不显示内容 -->
+		<!-- <view hidden="{{is_pay==1}}" bindtap="showComponent">
+		<no-buy id="noBuy"></no-buy>
+		</view> -->
+	</view>
+	<!-- 无购买权限结束 -->
+</view>

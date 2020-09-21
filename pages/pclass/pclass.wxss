@@ -1,0 +1,80 @@
+.container{
+	display: flex;
+	padding-top:20rpx;
+	font-size: 28rpx;
+	height: 100vh;
+}
+/* 字体选中样式 */
+.font-active{
+	color:#FF5400 !important;
+	font-weight: bold;}
+	/* 左侧列表 */
+.list-left{
+	height: 100vh;
+	flex:0 0 22%;
+	text-align: center;
+	overflow-y:scroll ;
+	/* position: fixed; */
+}
+.list-left view{
+	color: #666;
+	font-family: PingFang SC Medium;
+	padding: 16rpx 10rpx;
+	height: 78rpx;	
+	line-height: 78rpx;
+}
+/* 右侧列表 */
+/* .item-title {height: 50rpx;} */
+.list-right{
+	height: 100vh;
+	flex: 0 0 77%;
+	background: #fff;
+	overflow-y: scroll;
+	/* margin-left: 166rpx; */
+}
+.list-right .right-info{
+	display: flex;
+	flex-flow: row nowrap;
+	border-top: none;
+	padding: 10rpx;
+	/* line-height: 2 */
+}
+.right-info>view{
+	flex: 0 0 60%;
+	position: relative;
+}
+.list-right .detail-img{
+	width: 176rpx;
+	height: 176rpx;
+	margin: 20rpx;
+}
+.detail-title{
+	font-size: 28rpx;
+	color: #0F0F0F;
+	display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
+  overflow: hidden;
+}
+.detail-info{
+	font-size: 24rpx;
+	color: #505050;
+}
+.detail-price {
+	position: absolute;
+	bottom: 30rpx;
+	width: 333rpx;
+}
+.detail-number{
+	font-size: 20rpx;
+	color: #505050;
+	margin-top: 13rpx;
+}
+.price{
+	font-size: 28rpx;
+	color: #F03C3C;
+}
+.setNum{
+	text-align: right;
+}
+.fh{font-size:24rpx ;}

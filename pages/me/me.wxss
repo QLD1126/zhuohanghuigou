@@ -1,0 +1,113 @@
+/* pages/me/me.wxss */
+page>view{
+  background: #fff;
+  margin-bottom: 20rpx;
+  position: relative;
+}
+.container>view{
+  width: 100%;
+  margin-bottom: 20rpx;
+}
+.top{
+  height: 198rpx;
+  line-height: 198rpx;
+  background:#FF5400 ;
+  padding-left: 38rpx;
+  color: #fff;
+}
+.top image{
+  width: 97rpx;
+  height: 97rpx;
+  background: #eeeeee;
+  border: 4rpx solid #ffffff;
+  border-radius: 50%;
+  position: relative;
+  top: 38rpx;
+}
+.top text{
+  font-size: 34rpx;
+  margin-left: 20rpx;
+}
+/* 我的订单 */
+.order{
+  height: 88rpx;
+  margin-bottom: 6rpx;
+  line-height: 88rpx;
+  padding-left: 57rpx;
+  font-size: 28rpx;
+  background: #fff;
+  margin-bottom: 20rpx;
+}
+.order view{
+  display: inline;
+  color:#9A9E9E ;
+  font-size: 26rpx;
+  position: absolute;
+  left: 643rpx;
+}
+/* 三个圆圆图 */
+.order-list{
+  height: 160rpx;
+  display: flex;
+  justify-content: space-around;
+  text-align: center;
+  font-size: 26rpx;
+  align-items: center;
+  color: #353535;
+}
+.order-list>view{
+  flex:0 0 32.5%;
+}
+.order-list image{
+  width: 60rpx;
+  height: 60rpx;
+}
+.order-list text{
+  width: 28rpx;height: 28rpx;
+  line-height: 28rpx;
+  font-size: 18rpx;
+  top: 28rpx;
+}
+/* 地址/客服 */
+.other-serve{
+  background: #fafafa;
+}
+.other-serve>navigator,.other-serve>view{
+  height: 100rpx;
+  line-height: 100rpx;
+  margin-bottom: 6rpx;
+  font-size: 28rpx;
+  color: #505050;
+  padding-left: 20rpx;
+  background: #fff;
+}
+.other-serve>view{
+
+}
+.other-serve image{
+  width: 44rpx;height: 44rpx;
+  position: relative;
+  top: 14rpx;
+}
+.other-serve text{
+  position: absolute;
+  right: 40rpx;
+}
+/* 退出 */
+.exit{
+  background: #fff;
+  height:100rpx;
+  line-height: 100rpx;
+  text-align: center;
+  font-size: 28rpx;
+  color: #505050;
+}
+/* 按钮样式 */
+button {
+  background-color: #FF5400 !important;
+  top: 60rpx;
+  border-radius: 50rpx;
+  border: 1rpx solid #fff;
+  border-radius: 49rpx !important;
+  font-weight: lighter !important;
+}

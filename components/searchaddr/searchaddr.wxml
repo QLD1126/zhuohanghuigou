@@ -1,0 +1,12 @@
+		<!-- 虚拟顶部搜索栏开始 -->
+	<cover-view class=".top-search">
+		<cover-view class="location">
+			<text class="iconfont icon-dingwei"></text>
+			<text>青岛</text>
+			<text class="iconfont icon-xiangxia"></text>
+			<text class="iconfont icon-sousuo"></text>
+		</cover-view>
+		<input type="text" placeholder="搜索地址" />
+		<text class="search">搜索</text>
+	</cover-view>
+	<!-- 顶部搜索栏结束 -->

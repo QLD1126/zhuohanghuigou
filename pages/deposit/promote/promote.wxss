@@ -1,0 +1,70 @@
+/* miniprogram/pages/deposit/promote/promote.wxss */
+page>image{
+  width: 750rpx;
+  height: 100vh;
+  position: fixed;
+  top: 0;
+}
+/* page{background: #f00;} */
+.two{
+  position: relative;
+  z-index: 5;
+  text-align: center;
+  color: #fff;font-size: 30rpx;
+}
+.two>image{
+  width: 292rpx;
+  height: 292rpx;
+}
+.two>view{
+  margin: 28rpx 0;
+}
+.two image+view{
+  width:268rpx ;
+  height: 83rpx;
+  background:#D71E49 ;
+  border-radius: 42rpx;
+  line-height: 83rpx;
+  margin-left: 240rpx;
+}
+/* 白色框框 */
+.promote{
+  background:rgba(255, 255, 255, 0.3) ;
+  padding:20rpx ;
+  border-radius: 20rpx;
+  width: 650rpx;
+  position: relative;
+  left: 30rpx;
+}
+.promote-item{
+  display: flex;
+  align-items: center;
+}
+.promote-item>view{
+  flex:0 0 50%
+}
+.promote-item>view>view{
+  margin: 44rpx;
+}
+.p-all{
+  background: rgba(255, 255, 255, 0.2) !important;
+  overflow: hidden;
+  padding: 0;
+  width: 690rpx;
+}
+.p-all>view{
+  background: rgba(255, 255, 255, 0.3);
+  margin-bottom: 5rpx;
+  width: 690rpx;  
+}
+.p-all>view>view:first-child{
+  text-align: left;
+  padding: 24rpx 0 0 27rpx;
+}
+.p-all>view>view:first-child>text{margin-left: 14rpx;}
+.p-all+text{
+  position: relative;
+  left: -156rpx;
+  margin-bottom: 35rpx;
+  display: block;
+}

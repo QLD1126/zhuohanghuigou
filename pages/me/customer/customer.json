@@ -1,0 +1,6 @@
+{
+  "usingComponents": {
+    "wxparser": "plugin://wxparserPlugin/wxparser"
+  },
+  "navigationBarTitleText": "我的客服"
+}

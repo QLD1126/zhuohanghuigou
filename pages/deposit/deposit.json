@@ -1,0 +1,6 @@
+{
+  "usingComponents": {},
+  "navigationBarTitleText": "包装物押金",
+  "onReachBottom": true,
+  "enablePullDownRefresh":true
+}

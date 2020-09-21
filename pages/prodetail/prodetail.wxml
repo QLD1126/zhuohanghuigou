@@ -1,0 +1,42 @@
+<view class="container">
+	<view>
+		<!-- 轮播部分开始 -->
+		<swiper indicator-dots="{{indicatorDots}}" autoplay="true" interval="3000" duration="500" bindchange="swiperChange">
+			<block wx:for="{{pro.slider_image}}" wx:key="index">
+				<swiper-item>
+					<image src="{{item}}"/>
+				</swiper-item>
+			</block>
+		</swiper>
+		<!-- 轮播指示框 -->
+		<view class="dots">{{current+1}}/<text>{{pro.slider_image.length}}</text></view>
+		<!-- 轮播部分结束 -->
+		<!-- 商品介绍开始 -->
+		<view class="pro-info">
+			<view class="title">{{pro.store_name}}</view>
+			<view class="kouwei">{{pro.keyword}}</view>
+			<view class="price">
+				<text class="fh">￥</text>
+				<text>{{pro.price}}</text>
+				<text>销量{{pro.month_sales}}</text>
+			</view>
+		</view>
+		<!-- 商品介绍结束 -->
+		<!-- 商品详情开始 -->
+		<view class="pro-detail">
+			<view>商品详情</view>
+			<wxparser rich-text="{{pro.description}}" />
+		</view>
+		<!-- 商品详情结束 -->
+	</view>
+	<!-- 底部按钮开始 -->
+	<view class="bot">
+		<view bindtap="toCarpage">
+			<image src="../../images/index/icon_gouwuche_default.png"/>
+			<text class=" small-new" style="display:{{carCount==0?'none':'inline-block'}}">{{carCount}}</text>
+			<view>购物车</view>
+		</view>
+		<navigator bindtap="toCar">加入购物车</navigator>
+	</view>
+	<!-- 底部按钮结束 -->
+</view>

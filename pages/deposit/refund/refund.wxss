@@ -1,0 +1,28 @@
+/* miniprogram/pages/deposit/Refund/refund.wxss */
+.container{
+  width: 750rpx;
+  height: 731rpx;
+  margin-top: 20rpx;
+  padding-top: 160rpx;
+  text-align: center;
+  text-align:32rpx ;
+  /* box-sizing: border-box; */
+  background: #fff;
+}
+image{
+  width:340rpx ;
+  height: 340rpx;
+  margin-bottom: 28rpx;
+  /* border: 1rpx dashed #666; */
+}
+view>view:last-child{
+  width: 212rpx;
+  height: 60rpx;
+  background: #FF5400;
+  color: #fff;
+  line-height: 60rpx;
+  border-radius: 10rpx;
+  position: relative;
+  left: 265rpx;
+  top: 39rpx;
+}

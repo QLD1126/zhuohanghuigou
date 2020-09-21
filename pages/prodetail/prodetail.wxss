@@ -1,0 +1,111 @@
+/* pages/prodetail/prodetail.wxss */
+.container{padding: 0;}
+.container>view>view{
+  background: #fff;
+  width: 100%;
+}
+/* 轮播开始 */
+swiper{
+  height:600rpx;
+}
+swiper image{
+  height: 100%;
+  width: 794rpx;
+}
+/* 轮播指示框 */
+.dots{
+  width: 80rpx !important;
+  height: 44rpx;
+  border-radius: 20rpx;
+  color: #fff;
+  background: #4645453a !important;
+  font-size: 28rpx;
+  text-align:center;
+  position: absolute;
+  left: 645rpx;
+  top: 544rpx;
+}
+.dots text{font-weight: lighter;
+font-size: 24rpx;margin-left: 2rpx;}
+/* 轮播结束 */
+/* 介绍开始 */
+.pro-info{
+  padding-left:17rpx;
+  margin-bottom:20rpx;
+  background: #fff;
+}
+.pro-info .title{
+  font-size:30rpx;
+  margin:25rpx 37rpx 19rpx 0rpx;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 1;
+  overflow: hidden;
+}
+.kouwei{
+  font-size:24rpx;
+  color: #969696;
+  margin-bottom: 46rpx;
+}
+.price{
+  position: relative;
+}
+.price>text:nth-child(2){
+  font-size:40rpx;
+  color: #F03C3C;
+}
+.price>text:last-child{
+  font-size:24rpx;
+  color: #969696;
+  position: absolute;
+  right:36rpx;
+}
+/* 介绍结束 */
+/* 商品详情开始 */
+.pro-detail>view{
+  height:116rpx;
+  text-align: center;
+  line-height:116rpx;
+}
+.pro-detail image{
+  width: 750rpx;
+  /* height: 100%; */
+}
+/* 商品详情结束 */
+/* 底部按钮开始 */
+.bot>view{
+  flex:0 0 22%;
+  /* text-align: ; */
+  position: relative;
+}
+.bot image{
+  width:40rpx;
+  height:34rpx;
+  position: absolute;
+  top:16rpx;
+  right: 22px;  
+}
+/* .bot>view>view:first-child{ */
+  .bot text{
+  width:20rpx;
+  height:20rpx;
+  line-height: 20rpx;
+  font-size:15rpx;
+  top:18rpx;
+  right:26rpx;  
+}
+.bot>view>view:last-child{
+  font-size:18rpx;
+  color: #505050;
+  position: absolute;
+  top:18rpx;
+  right:36rpx;
+  
+}
+.bot>navigator{
+  flex: 0 0 80%;
+  background: #FF5400;
+  color: #fff;
+  font-size:30rpx;  
+}
+/* 底部按钮结束 */

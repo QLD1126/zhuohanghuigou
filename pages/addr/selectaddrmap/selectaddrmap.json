@@ -1,0 +1,6 @@
+{
+  "usingComponents": {
+    "search-addr":"/components/searchaddr/searchaddr"
+  },
+  "navigationBarTitleText": "选择收货地址"
+}

@@ -1,0 +1,30 @@
+<view class="top">
+	<image src="../../../images/index/sous.png" class="sous" />
+	<input type="search" value="{{keyword}}" class="search-input" placeholder="请输入商品名称" maxlength="10" bindinput="bindKeyInput" confirm-type="search"  bindconfirm="clickSearch" bindblur="clickSearch"/>
+	<text class="iconfont icon-shanchu a" catchtap="deltext"></text>
+	<text bindtap="clickSearch">搜索</text>
+</view>
+<view wx:if="{{loading}}">
+	<view class="tj-list" wx:if="{{hotProduct.length}}">
+		<view class="tj-detail" wx:for="{{hotProduct}}" wx:key='index'>
+			<image src="{{item.image}}" mode="" class="detail-img" bindtap="goDetail" data-id="{{item.id}}" />
+			<view class="detail-title">{{item.store_name}}</view>
+			<view class="detail-info">{{item.store_info}}</view>
+			<view class="detail-number">月售{{item.month_sales}}</view>
+			<view class="detail-price">
+				<text class="price"><text class="fh">￥</text>{{item.price}}</text>
+				<image class="car" wx:if="{{item.cart_num==0}}" src="../../../images/index/icon_gouwuche.png" bindtap="addCar" data-id="{{item.id}}" />
+				<!-- 增减按钮 -->
+				<view class="setNum" wx:else>
+					<view bindtap="changeNum" :class="{{item.cart_num==1?'disabled':'active'}}" data-index='{{index}}' data-sym="min">-</view>
+					<input type="text" value="{{item.cart_num}}" bindblur="blurCarNum" data-index='{{index}}' />
+					<view bindtap="changeNum" class="btn-active" data-index='{{index}}' data-sym='add'>+</view>
+				</view>
+			</view>
+		</view>
+	</view>
+	<view wx:else class="noRes">
+		<image src="../../../images/index/nores.png"></image>
+		<view>暂无相关产品</view>
+	</view>
+</view>

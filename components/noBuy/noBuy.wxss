@@ -1,0 +1,27 @@
+/* 权限弹窗 */
+.qx-info {
+  width: 690rpx;
+  height: 171rpx;
+  color: #fff;
+  background: rgba(0, 0, 0, 0.8);
+  border-radius:10rpx;
+  margin: 0 auto;
+  text-align: center;
+  position: fixed;
+  bottom: 20rpx;
+  left: 30rpx;
+  padding-bottom: 28rpx;
+}
+.qx-info image,.qx-info view {
+  margin-bottom:12rpx;
+  font-size:26rpx;
+}
+.qx-info image {
+  width: 20px;
+  height: 20px;
+  margin-top:26rpx;
+}
+.qx-info>view:last-child {
+  font-size:22rpx;
+}
+/* 权限弹窗结束 */

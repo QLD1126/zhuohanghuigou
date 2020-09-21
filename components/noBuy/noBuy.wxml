@@ -1,0 +1,7 @@
+		<!-- 无购买权限开始 -->
+		<view class="qx-info">
+			<image src="../../images/index/zhuyi.png"></image>
+				<view>您当前未获得购买权限，请联系商家为你开通</view>
+				<view>请致电-{{phone}}，为您开通购物权限</view>
+		</view>
+		<!-- 无购买权限结束 -->

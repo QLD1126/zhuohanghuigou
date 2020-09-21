@@ -1,0 +1,8 @@
+<view class="container">
+<!-- <image wx:if="{{imagePath==''}}" src="../../../images/index/nores.png" bindtap="chooseUImage"/>
+	<image wx:else src="{{imagePath}}" bindtap="chooseUImage" /> -->
+	<image src="{{imagePath==''?'../../../images/index/nores.png':imagePath}}" bindtap="chooseUImage"/>
+	<view>用于平台为您线下转账</view>
+	<view bindtap="chooseUImage">上传收款码</view>
+</view>
+<image src="../../../images"></image>

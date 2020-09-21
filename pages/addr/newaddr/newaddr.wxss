@@ -1,0 +1,89 @@
+/* pages/newaddr/newaddr.wxss */
+page {
+  padding-top: 20rpx;
+}
+
+view {
+  height: 105rpx;
+  line-height: 105rpx;
+  font-size: 30rpx;
+  margin-bottom: 4rpx;
+  background: #fff;
+  padding-left: 27rpx;
+  position: relative;
+}
+
+page>view:first-child input {
+  margin-left: 71rpx !important;
+}
+
+view>input {
+  display: inline-block;
+  margin-left: 41rpx;
+  line-height: 105rpx;
+  position: absolute;
+  top: 30rpx;
+  width: 67%;
+  text-overflow: ellipsis;
+}
+view>textarea{
+  display: inline-block;
+  margin-left: 41rpx;
+  line-height: 105rpx;
+  position: absolute;
+  /* top: 30rpx; */
+  width: 67%;
+  height: 109rpx;
+  z-index: 99;
+  /* text-overflow: ellipsis; */
+}
+
+view text {
+  font-size: 20rpx;
+  position: absolute;
+  right: 28rpx;
+  font-weight: bold;
+}
+
+/* switch */
+switch{
+  position: absolute;
+  right:28rpx ;
+}
+.wx-switch-input {
+  width: 72rpx !important;
+  height: 36rpx !important;
+}
+
+/*关闭状态*/
+.wx-switch-input::before {
+  width:0rpx !important;
+  height: 36rpx !important;
+}
+
+/*开启状态*/
+.wx-switch-input::after {
+  width: 30rpx !important;
+  height: 30rpx !important;
+  /* margin-left: -20rpx !important; */
+}
+/* 保存按钮 */
+.save{
+  background: #FF5400;
+  color: #fff;
+  text-align: center;
+  position: fixed;
+  width: 750rpx;
+  bottom: 0;
+  padding-left: 0;
+  text-overflow: ellipsis;
+}
+.addr{}
+.addr input{
+  /* display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 1;
+  overflow: hidden;
+  height: 100rpx;
+  */
+} 

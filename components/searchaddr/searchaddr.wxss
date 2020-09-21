@@ -1,0 +1,52 @@
+/* components/search/search.wxss */
+/* 搜索框部分开始 */
+.top-search{
+  background: #fff;
+  /* position: relative; */
+  position: fixed;
+  width: 750rpx;
+  height: 90rpx;
+  line-height: 90rpx;
+  position: fixed;
+  top: 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-left: 18rpx;
+  font-size: 30rpx;
+}
+.top-search .location{
+  flex:0 0 20%;
+}
+.top-search .icon-dingwei{
+font-size: 32rpx;
+color: #FF5400;
+}
+.top-search .icon-xiangxia{
+  font-size: 18rpx;
+  color: #222;
+  font-weight: bold;
+  margin: 0 10rpx;  
+}
+.top-search .icon-sousuo{
+  position: absolute;
+  left: 228rpx;
+  top: 24rpx;
+  font-size: 38rpx;
+  color: #888;
+}
+.top-search input{
+  background: #eeeded;
+  border-radius: 33rpx;
+  flex:0 0 45%;
+  height: 66rpx;
+  padding-left: 80rpx;
+  font-size: 28rpx;
+  margin: 0 20rpx 0 35rpx;
+
+}
+.top-search .search{
+  flex: 0 0 20%;
+  color: #535353;
+}
+/* 搜索框结束 */
